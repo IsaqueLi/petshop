@@ -1,10 +1,9 @@
-export function valida(input)  {                         
+export function valida(input) {                         
     const tipoDeInput = input.dataset.tipo      
 
     if(validadores[tipoDeInput]) {          
         validadores[tipoDeInput](input)     
     }
-    console.log('>>', input.value)
 }
 
 const validadores = {
@@ -13,10 +12,10 @@ const validadores = {
 
 function validaDataNascimento(input) {          
     const dataRecebida = new Date(input.value) 
-    let mensagem = ''                             
-    console.log(dataRecebida)
+    let mensagem = ''
+
     if(!maiorQue18(dataRecebida)) {                                      
-        mensagem = 'Você deve ser maior que 18 anos para se cadastrar.'  
+        mensagem = 'Você deve ser maior que 18 anos para se cadastrar.';  
     }        
     
     input.setCustomValidity(mensagem)       
@@ -25,7 +24,6 @@ function validaDataNascimento(input) {
 function maiorQue18(data) {                     
     const dataAtual = new Date()                
     const dataMais18 = new Date(data.getUTCFullYear() + 18, data.getUTCMonth(), data.getUTCDate())  
-    console.log('Data atual', dataAtual)
-    console.log('Data mais18', dataMais18)
     return dataMais18 <= dataAtual
 }
+
