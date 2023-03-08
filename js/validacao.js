@@ -6,6 +6,7 @@ export function valida(input) {
     }
 
     if(input.validity.valid){
+        console.log(input.validity.valid)
         input.parentElement.classList.remove('input-container--invalido');
         input.parentElement.querySelector('.input-mensagem-erro').innerHTML = '';
     } else{
@@ -54,6 +55,9 @@ const mensagemDeErro = {
     },
     estado: {
         valueMissing: 'O campo de estado não pode estar vazio.',
+    },
+    preco: {
+        valueMissing: 'O campo de nome não pode estar vazio.'
     }
 }
 
